@@ -1,2 +1,2 @@
-export * from "./transition";
 export * from "./property";
+export * from "./transition";

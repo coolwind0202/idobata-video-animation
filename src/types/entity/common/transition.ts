@@ -1,10 +1,15 @@
 import * as Property from "./property";
-import { BaseTransition } from "../base";
 
-type PositionTransition = BaseTransition<"position", Property.Position>;
+import { BaseEditDataEntityProperty } from "../base";
 
-type ScaleTransition = BaseTransition<"scale", Property.Scale>;
+type PositionProperty = BaseEditDataEntityProperty<"position", Property.Position>;
+type ScaleProperty = BaseEditDataEntityProperty<"scale", Property.Scale>;
+type TransparencyProperty = BaseEditDataEntityProperty<"transparency", Property.Transparency>;
+type RotationProperty = BaseEditDataEntityProperty<"rotation", Property.Rotation>;
 
-type TransparencyTransition = BaseTransition<"transparency", Property.Transparency>;
-
-export type { PositionTransition, ScaleTransition, TransparencyTransition }
+export interface CommonEntityProperties {
+    position: PositionProperty,
+    scale: ScaleProperty,
+    transparency: TransparencyProperty,
+    rotation: RotationProperty
+};

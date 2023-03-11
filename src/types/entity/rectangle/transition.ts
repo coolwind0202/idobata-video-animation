@@ -1,10 +1,13 @@
 import * as Property from "./property";
-import type { BaseTransition } from "../base";
 
-type RectangleWidthTransition = BaseTransition<"rectangleWidth", Property.RectangleWidth>;
-type RectangleHeightTransition = BaseTransition<"rectangleHeight", Property.RectangleHeight>;
+import { BaseEditDataEntityProperty } from "../base";
+import { CommonEntityProperties } from "../common";
+import { ShapeEntityPropaties } from "../shape";
 
-export type {
-    RectangleHeightTransition,
-    RectangleWidthTransition
+type RectangleHeightProperty = BaseEditDataEntityProperty<"rectangleHeight", Property.RectangleHeight>;
+type RectangleWidthProperty = BaseEditDataEntityProperty<"rectangleWidth", Property.RectangleHeight>;
+
+export interface RectangleEntityPropaties extends CommonEntityProperties, ShapeEntityPropaties {
+    rectangleHeight: RectangleHeightProperty,
+    rectangleWidth: RectangleWidthProperty
 };

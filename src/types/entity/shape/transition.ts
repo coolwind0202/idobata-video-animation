@@ -1,14 +1,14 @@
-import type * as Property from "./property";
-import type { BaseTransition } from "../base";
+import * as Property from "./property";
 
-type FillColorTransition = BaseTransition<"fillColor", Property.FillColor>;
+import { BaseEditDataEntityProperty } from "../base";
+import { CommonEntityProperties } from "../common";
 
-type LineColorTransition = BaseTransition<"lineColor", Property.LineColor>;
+type ShapeFillColorProperty = BaseEditDataEntityProperty<"shapeFillColor", Property.FillColor>;
+type ShapeLineColorProperty = BaseEditDataEntityProperty<"shapeLineColor", Property.LineColor>;
+type ShapeLineWeightProperty = BaseEditDataEntityProperty<"shapeLineWeight", Property.LineWeight>;
 
-type lineWeightTransition = BaseTransition<"lineWeight", Property.LineWeight>;
-
-export type {
-    FillColorTransition, 
-    LineColorTransition,
-    lineWeightTransition,
+export interface ShapeEntityPropaties extends CommonEntityProperties {
+    shapeFillColor: ShapeFillColorProperty,
+    shapeLineColor: ShapeLineColorProperty,
+    shapeLineWeight: ShapeLineWeightProperty
 };

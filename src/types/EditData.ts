@@ -1,10 +1,7 @@
-import { BaseEntity } from "./entity/base";
+import { BaseEditDataEntity } from "./entity/base";
 
 type EditData = {
-    entities: BaseEntity<string, { string: Record<string, unknown>}>[],
-
-    // Entity のタイプで分岐すると、プロパティの型が補完されるようにしたい。
-    // ただ、拡張可能な方法が思いつかない。
+    entities: BaseEditDataEntity[]
 }
 
 export default EditData;
