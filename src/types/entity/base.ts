@@ -34,5 +34,5 @@ export interface BaseEditDataEntityProperty<T extends string, S extends Record<s
 export interface BaseEditDataEntity {
     type: string,
     name: string,
-    properties: {}
+    properties: Record<string, unknown>
 };
